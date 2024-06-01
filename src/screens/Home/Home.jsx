@@ -19,10 +19,12 @@ const Home = () => {
     setTodos((prevTodos) => prevTodos.filter((todo) => todo._id !== id))
   }
   const addTodo = () => {
+    if (input.trim() === '') return // проверка на пустую строку, и прерывание выполнения функции
     setTodos((prevTodos) => [
       ...prevTodos,
       { _id: Math.random().toString(), title: input, completed: false },
     ])
+
     setInput('') // очистка инпута после ввода
   }
   const clearAll = () => {
@@ -38,8 +40,8 @@ const Home = () => {
         <div className="flex pt-10   ml-auto mr-auto">
           <div>
             <input
-              placeholder="Add Todo"
-              className="w-2/2 border-2 border-gray-800 rounded-3xl p-3 text-black"
+              placeholder="Enter Todo"
+              className="w-2/2 border-[0.5px] border-gray-800 rounded-3xl p-3 text-black"
               value={input}
               onChange={(e) => setInput(e.target.value)}
             />
