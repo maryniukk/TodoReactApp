@@ -37,7 +37,7 @@ const Home = () => {
         <h1 className="text-3xl  text-center font-bold pt-10 text-black ">
           Todo App
         </h1>
-        <div className="flex pt-10   ml-auto mr-auto">
+        <div className="flex pt-10 ml-auto mr-auto">
           <div>
             <input
               placeholder="Enter Todo"
